@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <title>UserForm</title>
+    <style>
+
+         .card {
+            width: 400px;
+            height: 580px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+        }
+        .btn {
+        margin-top: 25px;
+        }
+    </style>
+</head>
+<body>
+<div class="card">
+<h1>Manual Entry</h1>
+<form method="post" action="/user">
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name" required><br>
+
+    <label for="lastName">Last Name:</label><br>
+    <input type="text" id="lastName" name="lastName" required><br>
+
+    <label for="aadhar">Aadhaar No:</label><br>
+    <input type="text" id="aadhar" name="aadhar" required><br>
+
+    <label for="username">UserName:</label><br>
+    <input type="text" id="username" name="username" required><br>
+
+    <label for="dob">Date of Birth:</label><br>
+    <input type="date" id="dob" name="dob" required><br>
+
+    <label for="address">Address:</label><br>
+    <input type="text" id="address" name="address" required><br>
+
+
+    <button class="btn btn-primary" type="submit">Submit</button>
+</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script>window.jsPDF = window.jspdf.jsPDF;
+var docPDF = new jsPDF();
+function print(){
+var elementHTML = document.querySelector(".totalCard");
+docPDF.html(elementHTML, {
+ callback: function(docPDF) {
+  docPDF.save('MyAadhaarData.pdf');
+ },
+ x: 15,
+ y: 15,
+ width: 170,
+ windowWidth: 650
+});
+}</script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <title>User Data</title>
+    <style>
+
+        .card1 {
+            width: 400px;
+            height: 250px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            border-style: solid;
+            border-color: DeepSkyBlue;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+        }
+
+        .card2 {
+            width: 400px;
+            height: 250px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            border-style: solid;
+            border-color: DeepSkyBlue;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+        }
+
+        .view{
+        margin-left: auto;
+        padding-left: 48%;
+        color: DeepSkyBlue;
+        }
+    </style>
+</head>
+<body>
+<div class="totalCard">
+<div class="card1">
+<h1>Front Data</h1>
+    <hr>
+<p>Name: [[${name}]]</p>
+<p>Last Name: [[${lastname}]]</p>
+    <p>[[${aadhar}]]</p>
+</div>
+
+<div class="card2">
+    <h1>Back Data</h1>
+    <hr>
+    <p>Username: [[${username}]]</p>
+    <p>Date of Birth: [[${dob}]]</p>
+    <p>Address: [[${address}]]</p>
+</div>
+</div>
+<div class="view">
+    <button class="btn btn-primary" id="button" onclick="print()">Download</button>
+
+</div>
+</body>
+</html>
